@@ -36,5 +36,5 @@ COPY . ./ffmpeg-windows-build-helpers
 #COPY ./do-custom-build.sh /ffmpeg-windows-build-helpers/do-custom-build.sh
 
 WORKDIR /ffmpeg-windows-build-helpers
-# ENTRYPOINT [ "bash", "./docker/docker-entry.sh" ]
-ENTRYPOINT {"/bin/bash"}  
+ENTRYPOINT [ "bash", "./docker/docker-entry.sh" ]
+# ENTRYPOINT {"/bin/bash"}  
