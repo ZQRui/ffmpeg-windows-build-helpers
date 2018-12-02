@@ -1850,7 +1850,7 @@ build_ffmpeg() {
       init_options+=" --disable-schannel"
       # Fix WinXP incompatibility by disabling Microsoft's Secure Channel, because Windows XP doesn't support TLS 1.1 and 1.2, but with GnuTLS or OpenSSL it does.  XP compat!
     fi
-    config_options="$init_options --enable-libcaca --enable-gray --enable-libtesseract --enable-fontconfig --enable-gmp --enable-gnutls --enable-libass --enable-libbluray --enable-libbs2b --enable-libflite --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopus --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libzimg --enable-libzvbi --enable-libmysofa --enable-libaom --enable-libopenjpeg  --enable-libopenh264 --enable-liblensfun"
+    config_options="$init_options --disable-everything --enable-encoder=pcm_s8  --enable-encoder=pcm_u8  --enable-encoder=pcm_s16be --enable-encoder=pcm_s16le  --enable-encoder=pcm_u16be  --enable-encoder=pcm_u16le  --enable-encoder=libmp3lame  --enable-libmp3lame  --enable-version3  --enable-nonfree  --disable-bsfs  --disable-parsers  --enable-parser=mpegaudio  --disable-demuxers  --enable-demuxer=wav  --enable-demuxer=mp3  --enable-demuxer=amr  --disable-muxers --enable-muxer=mp3  --enable-muxer=wav  --enable-muxer=amr  --disable-decoders  --enable-decoder=mp3  --enable-decoder=wavpack  --enable-decoder=pcm_s8 --enable-decoder=pcm_u8 --enable-decoder=pcm_s16be --enable-decoder=pcm_s16le --enable-decoder=pcm_u16be --enable-decoder=pcm_u16le"
     if [[ $compiler_flavors != "native" ]]; then
       config_options+=" --enable-nvenc --enable-nvdec" # don't work OS X 
     fi
@@ -2132,8 +2132,8 @@ if [[ $OSTYPE == "darwin17" ]]; then
 fi
 
 # variables with their defaults
-build_ffmpeg_static=y
-build_ffmpeg_shared=n
+build_ffmpeg_static=n
+build_ffmpeg_shared=y
 build_dvbtee=n
 build_libmxf=n
 build_mp4box=n
