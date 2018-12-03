@@ -1906,7 +1906,7 @@ build_ffmpeg() {
     fi
     config_options+=" $extra_postpend_configure_options"
     echo "===========configure options =================="
-    echo config_options
+    echo $config_options
     read 
     do_configure "$config_options"
     rm -f */*.a */*.dll *.exe # just in case some dependency library has changed, force it to re-link even if the ffmpeg source hasn't changed...

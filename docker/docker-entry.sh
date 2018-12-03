@@ -20,8 +20,9 @@ OUTPUTDIR=/output
 --compiler-flavors=multi \
 --enable-gpl=n \
 --high-bitdepth=n \
+--git-get-latest=n \
+--debug \
 
---debug 
 
 # mkdir -p $OUTPUTDIR/static/bin
 # cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffmpeg.exe $OUTPUTDIR/static/bin
