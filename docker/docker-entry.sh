@@ -10,9 +10,17 @@ OUTPUTDIR=/output
 --disable-nonfree=y \
 --build-intel-qsv=n \
 --sandbox-ok=y \
+--build-libmxf=n \
+--build-mp4box=n \
+--build-mplayer=n \
+--build-vlc=n \
+--build-lsw=n \
+--build-ismindex=n \
+ --build-x264-with-libav=n \
 --compiler-flavors=multi \
 --enable-gpl=y \
 --high-bitdepth=n \
+
 --debug 
 
 # mkdir -p $OUTPUTDIR/static/bin

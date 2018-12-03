@@ -24,6 +24,7 @@
 --enable-nonfree \
 --disable-parsers \
 --disable-demuxers \
+--disable-bsfs \
 --enable-demuxer=wav \
 --enable-demuxer=mp3 \
 --disable-muxers \
