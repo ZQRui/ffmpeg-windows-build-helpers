@@ -3,12 +3,22 @@ set -e
 
 OUTPUTDIR=/output
 
-./cross_compile_ffmpeg.sh --build-ffmpeg-shared=y --build-ffmpeg-static=n --disable-nonfree=n --build-intel-qsv=y --compiler-flavors=win64 --enable-gpl=y --high-bitdepth=n
+./cross_compile_ffmpeg.sh \
+--build-ffmpeg-shared=y \
+--build-ffmpeg-static=n \
+--ffmpeg-git-checkout-version=n4.1 \
+--disable-nonfree=y \
+--build-intel-qsv=n \
+--sandbox-ok=y \
+--compiler-flavors=multi \
+--enable-gpl=y \
+--high-bitdepth=n \
+--debug 
 
-mkdir -p $OUTPUTDIR/static/bin
-cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffmpeg.exe $OUTPUTDIR/static/bin
-cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffprobe.exe $OUTPUTDIR/static/bin
-cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffplay.exe $OUTPUTDIR/static/bin
+# mkdir -p $OUTPUTDIR/static/bin
+# cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffmpeg.exe $OUTPUTDIR/static/bin
+# cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffprobe.exe $OUTPUTDIR/static/bin
+# cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac/ffplay.exe $OUTPUTDIR/static/bin
 
 mkdir -p $OUTPUTDIR/shared
-cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac_shared/bin/ $OUTPUTDIR/shared
+# cp -R -f ./sandbox/win64/ffmpeg_git_with_fdk_aac_shared/bin/ $OUTPUTDIR/shared
