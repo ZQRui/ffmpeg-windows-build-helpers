@@ -18,7 +18,7 @@ OUTPUTDIR=/output
 --build-ismindex=n \
  --build-x264-with-libav=n \
 --compiler-flavors=multi \
---enable-gpl=y \
+--enable-gpl=n \
 --high-bitdepth=n \
 
 --debug 
